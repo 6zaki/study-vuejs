@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue"></script>
+    <title>My first vue app</title>
+</head>
+<body>
+    <style>
+    .red {
+        font-size: 20px;
+        font-weight: bold;
+        font-style: normal;
+        color: red;
+    }
+    .blue {
+        font-size: 24px;
+        font-weight: normal;
+        font-style: italic;
+        color: blue;
+    }
+    </style>
+
+    <h1>Vue.js</h1>
+    <div id="app">
+        <!-- <p :class="classes">{{ message }}</p> -->
+        <p :style="{fontSize: '20px', color: 'red', border: '1px solid cyan'}">{{ message }}</p>
+    </div>
+    <hr>
+    <button onclick="doAction()">click</button>
+
+    <script>
+    var classObj = {
+        red: true,
+        blue: false
+    };
+
+    var data = {
+        message: 'Hello Vue!',
+        classes: classObj
+    };
+
+    var app = new Vue({
+        el: '#app',
+        data: data
+    });
+
+    function doAction() {
+        classObj.red = !classObj.red;
+        classObj.blue = !classObj.blue;
+    }
+    </script>
+</body>
+</html>
