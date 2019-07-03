@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue"></script>
+    <title>My first vue app</title>
+</head>
+<body>
+    <h1>Vue.js</h1>
+    <div id="app">
+        <hello/>
+    </div>
+
+    <script>
+    Vue.component('hello',
+    {
+        data: function() {
+            return{
+                message: 'これは新しいメッセージです'
+            };
+        },
+        template: '<p class="hello">{{ message }}</p>',
+    });
+
+    var app = new Vue({
+        el: '#app',
+    });
+    </script>
+</body>
+</html>
