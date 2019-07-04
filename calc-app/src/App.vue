@@ -12,7 +12,7 @@
 import Calc from './components/Calc.vue'
 
 export default {
-  name: '#app',
+  name: 'app',
   components: {
     Calc
   },
